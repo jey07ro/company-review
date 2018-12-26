@@ -1,0 +1,27 @@
+root: true
+
+extends:
+  - airbnb
+  - prettier
+  - prettier/react
+
+parser:
+  babel-eslint
+
+plugins:
+  - prettier
+
+settings:
+  ecmascript: 7
+
+env:
+  browser: true
+
+rules:
+  comma-dangle: 0
+  react/jsx-filename-extension: false
+
+globals:
+  expect: true
+  describe: true
+  it: true
