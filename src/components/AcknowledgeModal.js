@@ -4,22 +4,22 @@ import Modal from 'styled-react-modal'
 
 
 
-const AcknowledgeModal = ({onClose, onAcknowledge}) => (
-        <Modal
-            open={this.props.showModal}
-            onClose={this.props.onCloseModal}
-            center
-            styles={modalStyles}
-        >
-            <ModalTitle>Thank you for your review</ModalTitle>
-            <GrayedSmallText>
-                You're helping others make smarter decisions every day.
+const AcknowledgeModal = ({ onClose, onAcknowledge }) => (
+    <Modal
+        open={this.props.showModal}
+        onClose={this.props.onCloseModal}
+        center
+        styles={modalStyles}
+    >
+        <ModalTitle>Thank you for your review</ModalTitle>
+        <GrayedSmallText>
+            You're helping others make smarter decisions every day.
             </GrayedSmallText>
-            <hr />
-            <ModalButton onClick={this.props.onModalConfirm}>
-                Okay!
+        <hr />
+        <ModalButton onClick={this.props.onModalConfirm}>
+            Okay!
             </ModalButton>
-        </Modal>
+    </Modal>
 );
 
 export { AcknowledgeModal };

@@ -1,3 +1,4 @@
 export const FETCH_REVIEWS = 'FETCH_REVIEWS';
 export const NEW_REVIEW = 'NEW_REVIEW';
 export const UPDATE_REVIEW = 'UPDATE_REVIEW';
+export const SET_FILTER_REVIEWS = 'SET_FILTER_REVIEWS';

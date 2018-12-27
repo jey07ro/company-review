@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Rating from 'react-rating';
 import styled from 'styled-components';
-import { Star} from 'styled-icons/fa-solid/Star';
+import { Star } from 'styled-icons/fa-solid/Star';
 import { AccountCircle } from 'styled-icons/material';
 import { lighten, darken } from 'polished';
 import moment from 'moment';
@@ -74,27 +74,27 @@ const Review = ({
     createdTime,
     score,
 }) => (
-    <ReviewLayout>
-        <Avatar />
-        <ContentLayout>
-            <UserLayout>
-                <UserName>{userName}</UserName>
-            </UserLayout>
-            <RatingLayout>
-                <Rating
-                    initialRating={score}
-                    emptySymbol={<UngivenStar />}
-                    fullSymbol={<GivenStar />}
-                    readonly
-                />
-                <ReviewDate>
-                    {moment.unix(createdTime).fromNow()} - {company.displayName}
-                </ReviewDate>
-            </RatingLayout>
-            <Comment>{comment}</Comment>
-        </ContentLayout>
-    </ReviewLayout>
-);
+        <ReviewLayout>
+            <Avatar />
+            <ContentLayout>
+                <UserLayout>
+                    <UserName>{userName}</UserName>
+                </UserLayout>
+                <RatingLayout>
+                    <Rating
+                        initialRating={score}
+                        emptySymbol={<UngivenStar />}
+                        fullSymbol={<GivenStar />}
+                        readonly
+                    />
+                    <ReviewDate>
+                        {moment.unix(createdTime).fromNow()} - {company.displayName}
+                    </ReviewDate>
+                </RatingLayout>
+                <Comment>{comment}</Comment>
+            </ContentLayout>
+        </ReviewLayout>
+    );
 
 Review.propTypes = {
     userName: PropTypes.string.isRequired,

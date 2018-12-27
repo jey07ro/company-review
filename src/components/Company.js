@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { lighten } from 'polished';
+import { FilterReviewsContainer as FilterReviews } from '../containers/FilterReviews';
 
 
 const CompanyName = styled.h1`
@@ -40,7 +41,11 @@ const ScoreLayout = styled.div`
     justify-content: flex-start;
 `;
 
-const Company = ({review, reviews }) => (
+const FilterReviewLayout = styled.div`
+    margin-left: auto;
+`;
+
+const Company = ({ review, reviews }) => (
     <Header>
         <CompanyName>{review.company.displayName}</CompanyName>
         <CompanyReviews>Reviews</CompanyReviews>
@@ -52,6 +57,9 @@ const Company = ({review, reviews }) => (
                 from {reviews.length}{' '}
                 {reviews.length === 1 ? 'rating' : 'ratings'}
             </CounterScore>
+            <FilterReviewLayout>
+                <FilterReviews />
+            </FilterReviewLayout>
         </ScoreLayout>
     </Header>
 )

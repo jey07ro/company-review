@@ -12,6 +12,7 @@ import {
 } from './YourReview';
 import { scoreMapper, initComment } from '../config';
 
+
 const ReviewsAddLayout = styled.div`
     display: flex;
     flex-direction: column;
@@ -105,9 +106,8 @@ class ReviewsAdd extends Component {
 
     toggleAcknowledge = () => {
         this.setState(prev => ({
-                isAcknowledge: !prev.isAcknowledge
-            })
-        );
+            isAcknowledge: !prev.isAcknowledge
+        }));
     };
 
     closeForm = () => {
@@ -155,7 +155,7 @@ class ReviewsAdd extends Component {
                 <ScoreText>{scoreMapper[score]}</ScoreText>
                 <Name
                     placeholder="Your Name"
-                    defaultValue={userName !== initComment.userName ? userName : '' }
+                    defaultValue={userName !== initComment.userName ? userName : ''}
                     onChange={this.updateUserName}
                 />
                 <Text

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import moment from 'moment';
 import Rating from 'react-rating';
-import { Star} from 'styled-icons/fa-regular/Star';
+import { Star } from 'styled-icons/fa-regular/Star';
 import { uniq } from '../utils/uniq';
 import { darken } from 'polished';
 import {
@@ -18,6 +18,7 @@ import {
     GivenStar,
     UngivenStar,
 } from './Review';
+
 
 export const PendingStarBig = styled(Star)`
     width: 48px;
@@ -71,7 +72,7 @@ class YourReview extends Component {
     hasReview = () => {
         return !!this.props.review.score;
     }
-    
+
     updateScore = score => {
         this.props.updateScore(score);
         this.props.history.push('/reviews/add');
@@ -91,17 +92,17 @@ class YourReview extends Component {
                 <Avatar />
                 <ContentLayout>
                     {this.hasReview() ?
-                    (
-                        <UserLayout>
-                            <UserName>{userName}</UserName>
-                            <EditLink to="/reviews/add">...</EditLink>
-                        </UserLayout> 
-                    ):(
-                        <RateLayout>
-                            <RateTitle>Rate and review</RateTitle>
-                            <RateHint>Share your experience to help others</RateHint>
-                        </RateLayout>
-                    )}
+                        (
+                            <UserLayout>
+                                <UserName>{userName}</UserName>
+                                <EditLink to="/reviews/add">...</EditLink>
+                            </UserLayout>
+                        ) : (
+                            <RateLayout>
+                                <RateTitle>Rate and review</RateTitle>
+                                <RateHint>Share your experience to help others</RateHint>
+                            </RateLayout>
+                        )}
                     <RatingLayout>
                         {this.hasReview() ?
                             <Rating
@@ -115,14 +116,14 @@ class YourReview extends Component {
                                 emptySymbol={<PendingStarBig />}
                                 fullSymbol={<GivenStarBig />}
                                 onChange={this.updateScore}
-                            /> 
+                            />
                         }
                         {this.hasReview() && <ReviewDate>
                             {moment.unix(createdTime).fromNow()} - {company.displayName}
                         </ReviewDate>
                         }
                     </RatingLayout>
-                    {!this.hasReview() || comment ? 
+                    {!this.hasReview() || comment ?
                         <Comment>{comment}</Comment> :
                         <PrimaryLink to="/reviews/add">Describe your experience</PrimaryLink>
                     }
