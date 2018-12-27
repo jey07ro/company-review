@@ -9,7 +9,7 @@ export const ReviewsContainer = connect(
             return {
                 reviews: state.reviews.items
                     .slice(0)
-                    .sort((a, b) => moment(a.createdTime).diff(b.createdTime))
+                    .sort((a, b) => moment(b.createdTime).diff(a.createdTime))
                     .splice(0, 3),
                 filter: state.filter,
             }
