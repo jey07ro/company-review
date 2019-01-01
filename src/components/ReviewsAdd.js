@@ -64,7 +64,8 @@ const Text = styled.textarea`
     border-left: none;
     border-right: none;
     border-bottom: 1px solid ${props => lighten(0.2, props.theme.main)};
-    font-family: arial;
+    font-family: sans-serif;
+    font-size: 13px;
 `;
 
 const AcknowledgeModal = Modal.styled`
@@ -92,6 +93,7 @@ const PrimaryButton = styled.button`
     font-size: 13px;
     font-weight: bold;
     color: ${props => props.theme.active};
+    background-color: ${props => props.theme.backgroundColor};
     text-decoration: none;
     border: none;
     padding: 10px;

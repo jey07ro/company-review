@@ -6,6 +6,7 @@ import { LATEST_REVIEWS, ALL_REVIEWS } from '../constants/FilterReviews';
 const PrimaryButton = styled.button`
     font-size: 13px;
     color: ${props => props.theme.active};
+    background-color: ${props => props.theme.backgroundColor};
     text-decoration: none;
     border: none;
     outline: none;
