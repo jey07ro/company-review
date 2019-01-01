@@ -11,7 +11,7 @@ export const initialState = {
     item: initComment,
 };
 
-const reviews = function (state = initialState, action) {
+export const reviews = function (state = initialState, action) {
     switch (action.type) {
         case FETCH_REVIEWS:
             return {
@@ -32,6 +32,4 @@ const reviews = function (state = initialState, action) {
         default:
             return state;
     }
-}
-
-export { reviews };
+};
