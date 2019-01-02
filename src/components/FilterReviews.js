@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { LATEST_REVIEWS, ALL_REVIEWS } from '../constants/FilterReviews';
 
@@ -28,5 +29,10 @@ const FilterReviews = ({ filter, onSetFilter }) => (
         {FILTER_TITLES[filter]}
     </PrimaryButton>
 );
+
+FilterReviews.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onSetFilter: PropTypes.func.isRequired,
+};
 
 export { FilterReviews };

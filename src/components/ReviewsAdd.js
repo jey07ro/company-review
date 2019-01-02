@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Rating from 'react-rating';
 import styled from 'styled-components';
 import { lighten, darken } from 'polished';
@@ -179,5 +180,12 @@ class ReviewsAdd extends Component {
         );
     }
 }
+
+ReviewsAdd.propTypes = {
+  history: PropTypes.object.isRequired,
+  review: PropTypes.object.isRequired,
+  updateReview: PropTypes.func.isRequired,
+  createReview: PropTypes.func.isRequired,
+};
 
 export { ReviewsAdd };

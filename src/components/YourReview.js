@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import moment from 'moment';
@@ -131,6 +132,12 @@ class YourReview extends Component {
             </ReviewLayout>
         ];
     }
+};
+
+YourReview.propTypes = {
+  history: PropTypes.object.isRequired,
+  review: PropTypes.object.isRequired,
+  updateScore: PropTypes.func.isRequired,
 };
 
 export { YourReview };
